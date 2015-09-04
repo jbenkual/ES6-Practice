@@ -5,7 +5,7 @@ var result;
 // Takes N arguments, and should work on any number of arguments
 //--------------------------------------------------------
 
-var argSum = require("./argSum");
+var argsSum = require("./argSum");
 result = argsSum(3,7,8);
 console.log(result); // 18
 result = argsSum(1,1,1,1,1,1,1,1,1,1,1,1,1,1);
