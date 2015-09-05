@@ -1,12 +1,4 @@
-var isAWeekend = {
-	TODAY: function() {
-		var d = new Date().getDay();
-		if (d > 0 && d < 6) {
-			return false; // weekend
-		} else {
-			return true; // weekday
-		}
-	}
+/*jshint esnext: true */
+export default {
+	TODAY: () => new Date().getDay() === 0 || new Date().getDay() === 6
 };
-
-module.exports = isAWeekend;

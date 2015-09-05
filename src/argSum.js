@@ -1,9 +1,2 @@
-var sum = function() {
-	var total = 0;
-	for (var i = 0; i < arguments.length; i++) {
-		total += parseInt(arguments[i]);
-	}
-	return total;
-};
-
-module.exports = sum;
+/*jshint esnext: true */
+export default (...args) => args.reduce((a,b) => a+b);

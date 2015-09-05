@@ -1,3 +1,4 @@
+/*jshint esnext: true */
 var result;
 
 //--------------------------------------------------------
@@ -5,7 +6,7 @@ var result;
 // Takes N arguments, and should work on any number of arguments
 //--------------------------------------------------------
 
-var argsSum = require("./argSum");
+import argsSum from "./argSum";
 result = argsSum(3,7,8);
 console.log(result); // 18
 result = argsSum(1,1,1,1,1,1,1,1,1,1,1,1,1,1);
@@ -16,7 +17,8 @@ console.log(result); // 14
 // Takes 2 arguments
 //--------------------------------------------------------
 
-var splitSum = require("./util").splitSum;
+import splitSum1 from "./util";
+let splitSum = splitSum1.splitSum;
 result = splitSum("3:4:5:1", ":");
 console.log(result); // 13
 result = splitSum("-1$-5$5$-4", "$");
@@ -27,10 +29,11 @@ console.log(result); // -5
 // Takes 2 arguments
 //--------------------------------------------------------
 
-var createArrayFromAtoB = require("./arrayFunction")();
-result = createArrayFromAtoB(4, 9);
+import createArrayFromAtoB from "./arrayFunction";
+
+result = createArrayFromAtoB()(4, 9);
 console.log(result); // [4, 5, 6, 7, 8, 9]
-result = createArrayFromAtoB(-1, 3);
+result = createArrayFromAtoB()(-1, 3);
 console.log(result); // [-1, 0, 1, 2, 3]
 
 //--------------------------------------------------------
@@ -38,8 +41,8 @@ console.log(result); // [-1, 0, 1, 2, 3]
 // Takes no arguments
 //--------------------------------------------------------
 
-var isTodayAWeekend = require("./isAWeekend").TODAY;
+import isTodayAWeekend from "./isAWeekend";
 
-result = isTodayAWeekend();
+result = isTodayAWeekend.TODAY();
 console.log(result);
 // It will return true if today is Saturday or Sunday, otherwise, false
